@@ -20,8 +20,8 @@ airflow:
             are the wrapper scripts (build scope) and the live REST API + JWT
             issuance (deploy scope).
         require:
-            - '@github.com/opencharly/pod-marimo:v2026.237.558'
-            - '@github.com/opencharly/layer-supervisord:v2026.235.2056'
+            - '@github.com/opencharly/pod-marimo:v2026.243.1805'
+            - '@github.com/opencharly/layer-supervisord:v2026.240.0121'
         env:
             AIRFLOW_HOME: "~/airflow"
             # LocalExecutor + SQLite — zero external services. Airflow auto-creates
