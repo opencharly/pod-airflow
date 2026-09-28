@@ -1,5 +1,7 @@
+version: 2026.232.0520
 airflow:
     candy:
+        version: 2026.144.1443
         # NB: the upstream MCP wrapper (mcp-server-apache-airflow) targets the
         # removed /api/v1 in Airflow 3 and was removed from this layer in 2026-05;
         # consumers drive Airflow via direct REST /api/v2 calls. Python deps live
