@@ -18,12 +18,13 @@ airflow:
             are the wrapper scripts (build scope) and the live REST API + JWT
             issuance (deploy scope).
         require:
-            # Producer-first: pod-marimo v2026.320.2210 moved its own layer-cuda require past
-            # the CDI driver-shadowing fix. Pinning the OLD pod-marimo here re-introduces the
+            # Producer-first: pod-marimo moved its own layer-cuda require past BOTH CDI fixes --
+            # layer-cuda#19 (the injected libraries a baked copy could shadow) and layer-cuda#22
+            # (the driver user-space `cuda` reinstalls through nvidia-utils). Pinning the OLD pod-marimo here re-introduces the
             # pre-fix chain (layer-cuda v2026.290.2052 -> layer-nvidia 7766a9d0) into every
             # composing box, which then resolves one candy at two refs and refuses the project
             # (measured in opencharly/distro-cachyos, box=versa).
-            - '@github.com/opencharly/pod-marimo:v2026.320.2210'
+            - '@github.com/opencharly/pod-marimo:v2026.321.1706'
             - '@github.com/opencharly/layer-supervisord:v2026.271.1817'
         env:
             AIRFLOW_HOME: "~/airflow"
