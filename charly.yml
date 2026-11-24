@@ -25,7 +25,7 @@ airflow:
             # composing box, which then resolves one candy at two refs and refuses the project
             # (measured in opencharly/distro-cachyos, box=versa).
             - '@github.com/opencharly/pod-marimo:v2026.321.1706'
-            - '@github.com/opencharly/layer-supervisord:v2026.271.1817'
+            - '@github.com/opencharly/layer-supervisord:v2026.314.0710'
         env:
             AIRFLOW_HOME: "~/airflow"
             # LocalExecutor + SQLite — zero external services. Airflow auto-creates
